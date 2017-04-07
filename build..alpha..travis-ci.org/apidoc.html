@@ -1,0 +1,3153 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://medialize.github.io/URI.js/"
+
+    >urijs (v1.18.10)</a>
+</h1>
+<h4>URI.js is a Javascript library for working with URLs.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urijs">module urijs</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">urijs.</span>duplicateQueryParameters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">urijs.</span>escapeQuerySpace</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.URITemplate">
+            function <span class="apidocSignatureSpan">urijs.</span>URITemplate
+            <span class="apidocSignatureSpan">(expression)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs._parts">
+            function <span class="apidocSignatureSpan">urijs.</span>_parts
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.addQuery">
+            function <span class="apidocSignatureSpan">urijs.</span>addQuery
+            <span class="apidocSignatureSpan">(data, name, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.build">
+            function <span class="apidocSignatureSpan">urijs.</span>build
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.buildAuthority">
+            function <span class="apidocSignatureSpan">urijs.</span>buildAuthority
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.buildHost">
+            function <span class="apidocSignatureSpan">urijs.</span>buildHost
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.buildQuery">
+            function <span class="apidocSignatureSpan">urijs.</span>buildQuery
+            <span class="apidocSignatureSpan">(data, duplicateQueryParameters, escapeQuerySpace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.buildQueryParameter">
+            function <span class="apidocSignatureSpan">urijs.</span>buildQueryParameter
+            <span class="apidocSignatureSpan">(name, value, escapeQuerySpace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.buildUserinfo">
+            function <span class="apidocSignatureSpan">urijs.</span>buildUserinfo
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.commonPath">
+            function <span class="apidocSignatureSpan">urijs.</span>commonPath
+            <span class="apidocSignatureSpan">(one, two)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.decode">
+            function <span class="apidocSignatureSpan">urijs.</span>decode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.decodePath">
+            function <span class="apidocSignatureSpan">urijs.</span>decodePath
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.decodePathSegment">
+            function <span class="apidocSignatureSpan">urijs.</span>decodePathSegment
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.decodeQuery">
+            function <span class="apidocSignatureSpan">urijs.</span>decodeQuery
+            <span class="apidocSignatureSpan">(string, escapeQuerySpace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.decodeUrnPath">
+            function <span class="apidocSignatureSpan">urijs.</span>decodeUrnPath
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.decodeUrnPathSegment">
+            function <span class="apidocSignatureSpan">urijs.</span>decodeUrnPathSegment
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.encode">
+            function <span class="apidocSignatureSpan">urijs.</span>encode
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.encodePathSegment">
+            function <span class="apidocSignatureSpan">urijs.</span>encodePathSegment
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.encodeQuery">
+            function <span class="apidocSignatureSpan">urijs.</span>encodeQuery
+            <span class="apidocSignatureSpan">(string, escapeQuerySpace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.encodeReserved">
+            function <span class="apidocSignatureSpan">urijs.</span>encodeReserved
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.encodeUrnPathSegment">
+            function <span class="apidocSignatureSpan">urijs.</span>encodeUrnPathSegment
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.ensureValidHostname">
+            function <span class="apidocSignatureSpan">urijs.</span>ensureValidHostname
+            <span class="apidocSignatureSpan">(v)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.expand">
+            function <span class="apidocSignatureSpan">urijs.</span>expand
+            <span class="apidocSignatureSpan">(expression, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.getDomAttribute">
+            function <span class="apidocSignatureSpan">urijs.</span>getDomAttribute
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.hasQuery">
+            function <span class="apidocSignatureSpan">urijs.</span>hasQuery
+            <span class="apidocSignatureSpan">(data, name, value, withinArray)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.iso8859">
+            function <span class="apidocSignatureSpan">urijs.</span>iso8859
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.joinPaths">
+            function <span class="apidocSignatureSpan">urijs.</span>joinPaths
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.noConflict">
+            function <span class="apidocSignatureSpan">urijs.</span>noConflict
+            <span class="apidocSignatureSpan">(removeAll)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.parse">
+            function <span class="apidocSignatureSpan">urijs.</span>parse
+            <span class="apidocSignatureSpan">(string, parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.parseAuthority">
+            function <span class="apidocSignatureSpan">urijs.</span>parseAuthority
+            <span class="apidocSignatureSpan">(string, parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.parseHost">
+            function <span class="apidocSignatureSpan">urijs.</span>parseHost
+            <span class="apidocSignatureSpan">(string, parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.parseQuery">
+            function <span class="apidocSignatureSpan">urijs.</span>parseQuery
+            <span class="apidocSignatureSpan">(string, escapeQuerySpace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.parseUserinfo">
+            function <span class="apidocSignatureSpan">urijs.</span>parseUserinfo
+            <span class="apidocSignatureSpan">(string, parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.recodePath">
+            function <span class="apidocSignatureSpan">urijs.</span>recodePath
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.recodeUrnPath">
+            function <span class="apidocSignatureSpan">urijs.</span>recodeUrnPath
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.removeQuery">
+            function <span class="apidocSignatureSpan">urijs.</span>removeQuery
+            <span class="apidocSignatureSpan">(data, name, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.unicode">
+            function <span class="apidocSignatureSpan">urijs.</span>unicode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.withinString">
+            function <span class="apidocSignatureSpan">urijs.</span>withinString
+            <span class="apidocSignatureSpan">(string, callback, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>IPv6</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>SecondLevelDomains</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>URITemplate.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>characters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>defaultPorts</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>domAttributes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>findUri</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>find_uri_expression</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>idn_expression</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>invalid_hostname_characters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>ip4_expression</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>ip6_expression</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>protocol_expression</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>punycode</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.</span>punycode_expression</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">urijs.</span>fragmentPrefix</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">urijs.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urijs.IPv6">module urijs.IPv6</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.IPv6.best">
+            function <span class="apidocSignatureSpan">urijs.IPv6.</span>best
+            <span class="apidocSignatureSpan">(address)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.IPv6.noConflict">
+            function <span class="apidocSignatureSpan">urijs.IPv6.</span>noConflict
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urijs.SecondLevelDomains">module urijs.SecondLevelDomains</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.SecondLevelDomains.get">
+            function <span class="apidocSignatureSpan">urijs.SecondLevelDomains.</span>get
+            <span class="apidocSignatureSpan">(domain)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.SecondLevelDomains.has">
+            function <span class="apidocSignatureSpan">urijs.SecondLevelDomains.</span>has
+            <span class="apidocSignatureSpan">(domain)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.SecondLevelDomains.is">
+            function <span class="apidocSignatureSpan">urijs.SecondLevelDomains.</span>is
+            <span class="apidocSignatureSpan">(domain)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.SecondLevelDomains.noConflict">
+            function <span class="apidocSignatureSpan">urijs.SecondLevelDomains.</span>noConflict
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.SecondLevelDomains.</span>list</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urijs.URITemplate">module urijs.URITemplate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.URITemplate.URITemplate">
+            function <span class="apidocSignatureSpan">urijs.</span>URITemplate
+            <span class="apidocSignatureSpan">(expression)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.URITemplate.expand">
+            function <span class="apidocSignatureSpan">urijs.URITemplate.</span>expand
+            <span class="apidocSignatureSpan">(expression, data, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.URITemplate.expandNamed">
+            function <span class="apidocSignatureSpan">urijs.URITemplate.</span>expandNamed
+            <span class="apidocSignatureSpan">(d, options, explode, separator, length, name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.URITemplate.expandUnnamed">
+            function <span class="apidocSignatureSpan">urijs.URITemplate.</span>expandUnnamed
+            <span class="apidocSignatureSpan">(d, options, explode, separator, length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.URITemplate.noConflict">
+            function <span class="apidocSignatureSpan">urijs.URITemplate.</span>noConflict
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.URITemplate.</span>EXPRESSION_PATTERN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.URITemplate.</span>LITERAL_PATTERN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.URITemplate.</span>VARIABLE_NAME_PATTERN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.URITemplate.</span>VARIABLE_PATTERN</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.URITemplate.</span>_cache</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urijs.URITemplate.prototype">module urijs.URITemplate.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.URITemplate.prototype.expand">
+            function <span class="apidocSignatureSpan">urijs.URITemplate.prototype.</span>expand
+            <span class="apidocSignatureSpan">(data, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.URITemplate.prototype.parse">
+            function <span class="apidocSignatureSpan">urijs.URITemplate.prototype.</span>parse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urijs.punycode">module urijs.punycode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.punycode.decode">
+            function <span class="apidocSignatureSpan">urijs.punycode.</span>decode
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.punycode.encode">
+            function <span class="apidocSignatureSpan">urijs.punycode.</span>encode
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.punycode.toASCII">
+            function <span class="apidocSignatureSpan">urijs.punycode.</span>toASCII
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urijs.punycode.toUnicode">
+            function <span class="apidocSignatureSpan">urijs.punycode.</span>toUnicode
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urijs.punycode.</span>ucs2</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">urijs.punycode.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urijs" id="apidoc.module.urijs">module urijs</a></h1>
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.URITemplate" id="apidoc.element.urijs.URITemplate">
+        function <span class="apidocSignatureSpan">urijs.</span>URITemplate
+        <span class="apidocSignatureSpan">(expression)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function URITemplate(expression) {
+  // serve from cache where possible
+  if (URITemplate._cache[expression]) {
+    return URITemplate._cache[expression];
+  }
+
+  // Allow instantiation without the &#x27;new&#x27; keyword
+  if (!(this instanceof URITemplate)) {
+    return new URITemplate(expression);
+  }
+
+  this.expression = expression;
+  URITemplate._cache[expression] = this;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs._parts" id="apidoc.element.urijs._parts">
+        function <span class="apidocSignatureSpan">urijs.</span>_parts
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_parts = function () {
+  var parts = _parts();
+  parts.fragmentPrefix = URI.fragmentPrefix;
+  return parts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.addQuery" id="apidoc.element.urijs.addQuery">
+        function <span class="apidocSignatureSpan">urijs.</span>addQuery
+        <span class="apidocSignatureSpan">(data, name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addQuery = function (data, name, value) {
+  if (typeof name === &#x27;object&#x27;) {
+    for (var key in name) {
+      if (hasOwn.call(name, key)) {
+        URI.addQuery(data, key, name[key]);
+      }
+    }
+  } else if (typeof name === &#x27;string&#x27;) {
+    if (data[name] === undefined) {
+      data[name] = value;
+      return;
+    } else if (typeof data[name] === &#x27;string&#x27;) {
+      data[name] = [data[name]];
+    }
+
+    if (!isArray(value)) {
+      value = [value];
+    }
+
+    data[name] = (data[name] || []).concat(value);
+  } else {
+    throw new TypeError(&#x27;URI.addQuery() accepts an object, string as the name parameter&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+url += separator + encodeURIComponent(&#x22;foo&#x22;) + &#x22;=&#x22; + encodeURIComponent(&#x22;bar&#x22;);
+```
+
+Things are looking up with [URL](https://developer.mozilla.org/en/docs/Web/API/URL) and the [URL spec](http://url.spec.whatwg.org
+/) but until we can safely rely on that API, have a look at URI.js for a clean and simple API for mutating URIs:
+
+```javascript
+var url = new URI(&#x22;http://example.org/foo?bar=baz&#x22;);
+url.<span class="apidocCodeKeywordSpan">addQuery</span>(&#x22;foo&#x22;, &#x22;bar&#x22;);
+```
+
+URI.js is here to help with that.
+
+
+## API Example ##
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.build" id="apidoc.element.urijs.build">
+        function <span class="apidocSignatureSpan">urijs.</span>build
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (parts) {
+  var t = &#x27;&#x27;;
+
+  if (parts.protocol) {
+    t += parts.protocol + &#x27;:&#x27;;
+  }
+
+  if (!parts.urn &#x26;&#x26; (t || parts.hostname)) {
+    t += &#x27;//&#x27;;
+  }
+
+  t += (URI.buildAuthority(parts) || &#x27;&#x27;);
+
+  if (typeof parts.path === &#x27;string&#x27;) {
+    if (parts.path.charAt(0) !== &#x27;/&#x27; &#x26;&#x26; typeof parts.hostname === &#x27;string&#x27;) {
+      t += &#x27;/&#x27;;
+    }
+
+    t += parts.path;
+  }
+
+  if (typeof parts.query === &#x27;string&#x27; &#x26;&#x26; parts.query) {
+    t += &#x27;?&#x27; + parts.query;
+  }
+
+  if (typeof parts.fragment === &#x27;string&#x27; &#x26;&#x26; parts.fragment) {
+    t += &#x27;#&#x27; + parts.fragment;
+  }
+  return t;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.buildAuthority" id="apidoc.element.urijs.buildAuthority">
+        function <span class="apidocSignatureSpan">urijs.</span>buildAuthority
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildAuthority = function (parts) {
+  return URI.buildUserinfo(parts) + URI.buildHost(parts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.buildHost" id="apidoc.element.urijs.buildHost">
+        function <span class="apidocSignatureSpan">urijs.</span>buildHost
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildHost = function (parts) {
+  var t = &#x27;&#x27;;
+
+  if (!parts.hostname) {
+    return &#x27;&#x27;;
+  } else if (URI.ip6_expression.test(parts.hostname)) {
+    t += &#x27;[&#x27; + parts.hostname + &#x27;]&#x27;;
+  } else {
+    t += parts.hostname;
+  }
+
+  if (parts.port) {
+    t += &#x27;:&#x27; + parts.port;
+  }
+
+  return t;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.buildQuery" id="apidoc.element.urijs.buildQuery">
+        function <span class="apidocSignatureSpan">urijs.</span>buildQuery
+        <span class="apidocSignatureSpan">(data, duplicateQueryParameters, escapeQuerySpace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildQuery = function (data, duplicateQueryParameters, escapeQuerySpace) {
+  // according to http://tools.ietf.org/html/rfc3986 or http://labs.apache.org/webarch/uri/rfc/rfc3986.html
+  // being »-._~!$&#x26;&#x27;()*+,;=:@/?« %HEX and alnum are allowed
+  // the RFC explicitly states ?/foo being a valid use case, no mention of parameter syntax!
+  // URI.js treats the query string as being application/x-www-form-urlencoded
+  // see http://www.w3.org/TR/REC-html40/interact/forms.html#form-content-type
+
+  var t = &#x27;&#x27;;
+  var unique, key, i, length;
+  for (key in data) {
+    if (hasOwn.call(data, key) &#x26;&#x26; key) {
+      if (isArray(data[key])) {
+        unique = {};
+        for (i = 0, length = data[key].length; i &#x3c; length; i++) {
+          if (data[key][i] !== undefined &#x26;&#x26; unique[data[key][i] + &#x27;&#x27;] === undefined) {
+            t += &#x27;&#x26;&#x27; + URI.buildQueryParameter(key, data[key][i], escapeQuerySpace);
+            if (duplicateQueryParameters !== true) {
+              unique[data[key][i] + &#x27;&#x27;] = true;
+            }
+          }
+        }
+      } else if (data[key] !== undefined) {
+        t += &#x27;&#x26;&#x27; + URI.buildQueryParameter(key, data[key], escapeQuerySpace);
+      }
+    }
+  }
+
+  return t.substring(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.buildQueryParameter" id="apidoc.element.urijs.buildQueryParameter">
+        function <span class="apidocSignatureSpan">urijs.</span>buildQueryParameter
+        <span class="apidocSignatureSpan">(name, value, escapeQuerySpace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildQueryParameter = function (name, value, escapeQuerySpace) {
+  // http://www.w3.org/TR/REC-html40/interact/forms.html#form-content-type -- application/x-www-form-urlencoded
+  // don&#x27;t append &#x22;=&#x22; for null values, according to http://dvcs.w3.org/hg/url/raw-file/tip/Overview.html#url-parameter-serialization
+  return URI.encodeQuery(name, escapeQuerySpace) + (value !== null ? &#x27;=&#x27; + URI.encodeQuery(value, escapeQuerySpace) : &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.buildUserinfo" id="apidoc.element.urijs.buildUserinfo">
+        function <span class="apidocSignatureSpan">urijs.</span>buildUserinfo
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildUserinfo = function (parts) {
+  var t = &#x27;&#x27;;
+
+  if (parts.username) {
+    t += URI.encode(parts.username);
+  }
+
+  if (parts.password) {
+    t += &#x27;:&#x27; + URI.encode(parts.password);
+  }
+
+  if (t) {
+    t += &#x27;@&#x27;;
+  }
+
+  return t;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.commonPath" id="apidoc.element.urijs.commonPath">
+        function <span class="apidocSignatureSpan">urijs.</span>commonPath
+        <span class="apidocSignatureSpan">(one, two)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">commonPath = function (one, two) {
+  var length = Math.min(one.length, two.length);
+  var pos;
+
+  // find first non-matching character
+  for (pos = 0; pos &#x3c; length; pos++) {
+    if (one.charAt(pos) !== two.charAt(pos)) {
+      pos--;
+      break;
+    }
+  }
+
+  if (pos &#x3c; 1) {
+    return one.charAt(0) === two.charAt(0) &#x26;&#x26; one.charAt(0) === &#x27;/&#x27; ? &#x27;/&#x27; : &#x27;&#x27;;
+  }
+
+  // revert to last /
+  if (one.charAt(pos) !== &#x27;/&#x27; || two.charAt(pos) !== &#x27;/&#x27;) {
+    pos = one.substring(0, pos).lastIndexOf(&#x27;/&#x27;);
+  }
+
+  return one.substring(0, pos + 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.decode" id="apidoc.element.urijs.decode">
+        function <span class="apidocSignatureSpan">urijs.</span>decode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decodeURIComponent() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.decodePath" id="apidoc.element.urijs.decodePath">
+        function <span class="apidocSignatureSpan">urijs.</span>decodePath
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodePath = function (string) {
+  // Why pass in names of functions, rather than the function objects themselves? The
+  // definitions of some functions (but in particular, URI.decode) will occasionally change due
+  // to URI.js having ISO8859 and Unicode modes. Passing in the name and getting it will ensure
+  // that the functions we use here are &#x22;fresh&#x22;.
+  var actualCodingFunc;
+  if (!_innerCodingFuncName) {
+    actualCodingFunc = URI[_codingFuncName];
+  } else {
+    actualCodingFunc = function(string) {
+      return URI[_codingFuncName](URI[_innerCodingFuncName](string));
+    };
+  }
+
+  var segments = (string + &#x27;&#x27;).split(_sep);
+
+  for (var i = 0, length = segments.length; i &#x3c; length; i++) {
+    segments[i] = actualCodingFunc(segments[i]);
+  }
+
+  return segments.join(_sep);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.decodePathSegment" id="apidoc.element.urijs.decodePathSegment">
+        function <span class="apidocSignatureSpan">urijs.</span>decodePathSegment
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodePathSegment = function (string) {
+  try {
+    return URI[_part](string + &#x27;&#x27;).replace(URI.characters[_group][_part].expression, function(c) {
+      return URI.characters[_group][_part].map[c];
+    });
+  } catch (e) {
+    // we&#x27;re not going to mess with weird encodings,
+    // give up and return the undecoded original string
+    // see https://github.com/medialize/URI.js/issues/87
+    // see https://github.com/medialize/URI.js/issues/92
+    return string;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.decodeQuery" id="apidoc.element.urijs.decodeQuery">
+        function <span class="apidocSignatureSpan">urijs.</span>decodeQuery
+        <span class="apidocSignatureSpan">(string, escapeQuerySpace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeQuery = function (string, escapeQuerySpace) {
+  string += &#x27;&#x27;;
+  if (escapeQuerySpace === undefined) {
+    escapeQuerySpace = URI.escapeQuerySpace;
+  }
+
+  try {
+    return URI.decode(escapeQuerySpace ? string.replace(/\+/g, &#x27;%20&#x27;) : string);
+  } catch(e) {
+    // we&#x27;re not going to mess with weird encodings,
+    // give up and return the undecoded original string
+    // see https://github.com/medialize/URI.js/issues/87
+    // see https://github.com/medialize/URI.js/issues/92
+    return string;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.decodeUrnPath" id="apidoc.element.urijs.decodeUrnPath">
+        function <span class="apidocSignatureSpan">urijs.</span>decodeUrnPath
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeUrnPath = function (string) {
+  // Why pass in names of functions, rather than the function objects themselves? The
+  // definitions of some functions (but in particular, URI.decode) will occasionally change due
+  // to URI.js having ISO8859 and Unicode modes. Passing in the name and getting it will ensure
+  // that the functions we use here are &#x22;fresh&#x22;.
+  var actualCodingFunc;
+  if (!_innerCodingFuncName) {
+    actualCodingFunc = URI[_codingFuncName];
+  } else {
+    actualCodingFunc = function(string) {
+      return URI[_codingFuncName](URI[_innerCodingFuncName](string));
+    };
+  }
+
+  var segments = (string + &#x27;&#x27;).split(_sep);
+
+  for (var i = 0, length = segments.length; i &#x3c; length; i++) {
+    segments[i] = actualCodingFunc(segments[i]);
+  }
+
+  return segments.join(_sep);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.decodeUrnPathSegment" id="apidoc.element.urijs.decodeUrnPathSegment">
+        function <span class="apidocSignatureSpan">urijs.</span>decodeUrnPathSegment
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeUrnPathSegment = function (string) {
+  try {
+    return URI[_part](string + &#x27;&#x27;).replace(URI.characters[_group][_part].expression, function(c) {
+      return URI.characters[_group][_part].map[c];
+    });
+  } catch (e) {
+    // we&#x27;re not going to mess with weird encodings,
+    // give up and return the undecoded original string
+    // see https://github.com/medialize/URI.js/issues/87
+    // see https://github.com/medialize/URI.js/issues/92
+    return string;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.encode" id="apidoc.element.urijs.encode">
+        function <span class="apidocSignatureSpan">urijs.</span>encode
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function strictEncodeURIComponent(string) {
+  // see https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/encodeURIComponent
+  return encodeURIComponent(string)
+    .replace(/[!&#x27;()*]/g, escapeForDumbFirefox36)
+    .replace(/\*/g, &#x27;%2A&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.encodePathSegment" id="apidoc.element.urijs.encodePathSegment">
+        function <span class="apidocSignatureSpan">urijs.</span>encodePathSegment
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodePathSegment = function (string) {
+  try {
+    return URI[_part](string + &#x27;&#x27;).replace(URI.characters[_group][_part].expression, function(c) {
+      return URI.characters[_group][_part].map[c];
+    });
+  } catch (e) {
+    // we&#x27;re not going to mess with weird encodings,
+    // give up and return the undecoded original string
+    // see https://github.com/medialize/URI.js/issues/87
+    // see https://github.com/medialize/URI.js/issues/92
+    return string;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.encodeQuery" id="apidoc.element.urijs.encodeQuery">
+        function <span class="apidocSignatureSpan">urijs.</span>encodeQuery
+        <span class="apidocSignatureSpan">(string, escapeQuerySpace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeQuery = function (string, escapeQuerySpace) {
+  var escaped = URI.encode(string + &#x27;&#x27;);
+  if (escapeQuerySpace === undefined) {
+    escapeQuerySpace = URI.escapeQuerySpace;
+  }
+
+  return escapeQuerySpace ? escaped.replace(/%20/g, &#x27;+&#x27;) : escaped;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.encodeReserved" id="apidoc.element.urijs.encodeReserved">
+        function <span class="apidocSignatureSpan">urijs.</span>encodeReserved
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeReserved = function (string) {
+  try {
+    return URI[_part](string + &#x27;&#x27;).replace(URI.characters[_group][_part].expression, function(c) {
+      return URI.characters[_group][_part].map[c];
+    });
+  } catch (e) {
+    // we&#x27;re not going to mess with weird encodings,
+    // give up and return the undecoded original string
+    // see https://github.com/medialize/URI.js/issues/87
+    // see https://github.com/medialize/URI.js/issues/92
+    return string;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.encodeUrnPathSegment" id="apidoc.element.urijs.encodeUrnPathSegment">
+        function <span class="apidocSignatureSpan">urijs.</span>encodeUrnPathSegment
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeUrnPathSegment = function (string) {
+  try {
+    return URI[_part](string + &#x27;&#x27;).replace(URI.characters[_group][_part].expression, function(c) {
+      return URI.characters[_group][_part].map[c];
+    });
+  } catch (e) {
+    // we&#x27;re not going to mess with weird encodings,
+    // give up and return the undecoded original string
+    // see https://github.com/medialize/URI.js/issues/87
+    // see https://github.com/medialize/URI.js/issues/92
+    return string;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.ensureValidHostname" id="apidoc.element.urijs.ensureValidHostname">
+        function <span class="apidocSignatureSpan">urijs.</span>ensureValidHostname
+        <span class="apidocSignatureSpan">(v)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ensureValidHostname = function (v) {
+  // Theoretically URIs allow percent-encoding in Hostnames (according to RFC 3986)
+  // they are not part of DNS and therefore ignored by URI.js
+
+  if (v.match(URI.invalid_hostname_characters)) {
+    // test punycode
+    if (!punycode) {
+      throw new TypeError(&#x27;Hostname &#x22;&#x27; + v + &#x27;&#x22; contains characters other than [A-Z0-9.-] and Punycode.js is not available&#x27;);
+    }
+
+    if (punycode.toASCII(v).match(URI.invalid_hostname_characters)) {
+      throw new TypeError(&#x27;Hostname &#x22;&#x27; + v + &#x27;&#x22; contains characters other than [A-Z0-9.-]&#x27;);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.expand" id="apidoc.element.urijs.expand">
+        function <span class="apidocSignatureSpan">urijs.</span>expand
+        <span class="apidocSignatureSpan">(expression, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">expand = function (expression, data) {
+  var template = new URITemplate(expression);
+  var expansion = template.expand(data);
+
+  return new URI(expansion);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+URI(&#x22;/foo/bar/baz.html&#x22;)
+  .relativeTo(&#x22;/foo/bar/sub/world.html&#x22;)
+    // -&#x3e; ../baz.html
+  .absoluteTo(&#x22;/foo/bar/sub/world.html&#x22;);
+    // -&#x3e; /foo/bar/baz.html
+
+// URI Templates
+URI.<span class="apidocCodeKeywordSpan">expand</span>(&#x22;/foo/{dir}/{file}&#x22;, {
+  dir: &#x22;bar&#x22;,
+  file: &#x22;world.html&#x22;
+});
+// -&#x3e; /foo/bar/world.html
+```
+
+See the [About Page](http://medialize.github.io/URI.js/) and [API Docs](http://medialize.github.io/URI.js/docs.html) for more stuff
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.getDomAttribute" id="apidoc.element.urijs.getDomAttribute">
+        function <span class="apidocSignatureSpan">urijs.</span>getDomAttribute
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDomAttribute = function (node) {
+  if (!node || !node.nodeName) {
+    return undefined;
+  }
+
+  var nodeName = node.nodeName.toLowerCase();
+  // &#x3c;input&#x3e; should only expose src for type=&#x22;image&#x22;
+  if (nodeName === &#x27;input&#x27; &#x26;&#x26; node.type !== &#x27;image&#x27;) {
+    return undefined;
+  }
+
+  return URI.domAttributes[nodeName];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.hasQuery" id="apidoc.element.urijs.hasQuery">
+        function <span class="apidocSignatureSpan">urijs.</span>hasQuery
+        <span class="apidocSignatureSpan">(data, name, value, withinArray)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasQuery = function (data, name, value, withinArray) {
+  switch (getType(name)) {
+    case &#x27;String&#x27;:
+      // Nothing to do here
+      break;
+
+    case &#x27;RegExp&#x27;:
+      for (var key in data) {
+        if (hasOwn.call(data, key)) {
+          if (name.test(key) &#x26;&#x26; (value === undefined || URI.hasQuery(data, key, value))) {
+            return true;
+          }
+        }
+      }
+
+      return false;
+
+    case &#x27;Object&#x27;:
+      for (var _key in name) {
+        if (hasOwn.call(name, _key)) {
+          if (!URI.hasQuery(data, _key, name[_key])) {
+            return false;
+          }
+        }
+      }
+
+      return true;
+
+    default:
+      throw new TypeError(&#x27;URI.hasQuery() accepts a string, regular expression or object as the name parameter&#x27;);
+  }
+
+  switch (getType(value)) {
+    case &#x27;Undefined&#x27;:
+      // true if exists (but may be empty)
+      return name in data; // data[name] !== undefined;
+
+    case &#x27;Boolean&#x27;:
+      // true if exists and non-empty
+      var _booly = Boolean(isArray(data[name]) ? data[name].length : data[name]);
+      return value === _booly;
+
+    case &#x27;Function&#x27;:
+      // allow complex comparison
+      return !!value(data[name], name, data);
+
+    case &#x27;Array&#x27;:
+      if (!isArray(data[name])) {
+        return false;
+      }
+
+      var op = withinArray ? arrayContains : arraysEqual;
+      return op(data[name], value);
+
+    case &#x27;RegExp&#x27;:
+      if (!isArray(data[name])) {
+        return Boolean(data[name] &#x26;&#x26; data[name].match(value));
+      }
+
+      if (!withinArray) {
+        return false;
+      }
+
+      return arrayContains(data[name], value);
+
+    case &#x27;Number&#x27;:
+      value = String(value);
+<span class="apidocCodeCommentSpan">      /* falls through */
+</span>    case &#x27;String&#x27;:
+      if (!isArray(data[name])) {
+        return data[name] === value;
+      }
+
+      if (!withinArray) {
+        return false;
+      }
+
+      return arrayContains(data[name], value);
+
+    default:
+      throw new TypeError(&#x27;URI.hasQuery() accepts undefined, boolean, string, number, RegExp, Function as the value parameter&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.iso8859" id="apidoc.element.urijs.iso8859">
+        function <span class="apidocSignatureSpan">urijs.</span>iso8859
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iso8859 = function () {
+  URI.encode = escape;
+  URI.decode = unescape;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.joinPaths" id="apidoc.element.urijs.joinPaths">
+        function <span class="apidocSignatureSpan">urijs.</span>joinPaths
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">joinPaths = function () {
+  var input = [];
+  var segments = [];
+  var nonEmptySegments = 0;
+
+  for (var i = 0; i &#x3c; arguments.length; i++) {
+    var url = new URI(arguments[i]);
+    input.push(url);
+    var _segments = url.segment();
+    for (var s = 0; s &#x3c; _segments.length; s++) {
+      if (typeof _segments[s] === &#x27;string&#x27;) {
+        segments.push(_segments[s]);
+      }
+
+      if (_segments[s]) {
+        nonEmptySegments++;
+      }
+    }
+  }
+
+  if (!segments.length || !nonEmptySegments) {
+    return new URI(&#x27;&#x27;);
+  }
+
+  var uri = new URI(&#x27;&#x27;).segment(segments);
+
+  if (input[0].path() === &#x27;&#x27; || input[0].path().slice(0, 1) === &#x27;/&#x27;) {
+    uri.path(&#x27;/&#x27; + uri.path());
+  }
+
+  return uri.normalize();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.noConflict" id="apidoc.element.urijs.noConflict">
+        function <span class="apidocSignatureSpan">urijs.</span>noConflict
+        <span class="apidocSignatureSpan">(removeAll)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noConflict = function (removeAll) {
+  if (removeAll) {
+    var unconflicted = {
+      URI: this.noConflict()
+    };
+
+    if (root.URITemplate &#x26;&#x26; typeof root.URITemplate.noConflict === &#x27;function&#x27;) {
+      unconflicted.URITemplate = root.URITemplate.noConflict();
+    }
+
+    if (root.IPv6 &#x26;&#x26; typeof root.IPv6.noConflict === &#x27;function&#x27;) {
+      unconflicted.IPv6 = root.IPv6.noConflict();
+    }
+
+    if (root.SecondLevelDomains &#x26;&#x26; typeof root.SecondLevelDomains.noConflict === &#x27;function&#x27;) {
+      unconflicted.SecondLevelDomains = root.SecondLevelDomains.noConflict();
+    }
+
+    return unconflicted;
+  } else if (root.URI === this) {
+    root.URI = _URI;
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.parse" id="apidoc.element.urijs.parse">
+        function <span class="apidocSignatureSpan">urijs.</span>parse
+        <span class="apidocSignatureSpan">(string, parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (string, parts) {
+  var pos;
+  if (!parts) {
+    parts = {};
+  }
+  // [protocol&#x22;://&#x22;[username[&#x22;:&#x22;password]&#x22;@&#x22;]hostname[&#x22;:&#x22;port]&#x22;/&#x22;?][path][&#x22;?&#x22;querystring][&#x22;#&#x22;fragment]
+
+  // extract fragment
+  pos = string.indexOf(&#x27;#&#x27;);
+  if (pos &#x3e; -1) {
+    // escaping?
+    parts.fragment = string.substring(pos + 1) || null;
+    string = string.substring(0, pos);
+  }
+
+  // extract query
+  pos = string.indexOf(&#x27;?&#x27;);
+  if (pos &#x3e; -1) {
+    // escaping?
+    parts.query = string.substring(pos + 1) || null;
+    string = string.substring(0, pos);
+  }
+
+  // extract protocol
+  if (string.substring(0, 2) === &#x27;//&#x27;) {
+    // relative-scheme
+    parts.protocol = null;
+    string = string.substring(2);
+    // extract &#x22;user:pass@host:port&#x22;
+    string = URI.parseAuthority(string, parts);
+  } else {
+    pos = string.indexOf(&#x27;:&#x27;);
+    if (pos &#x3e; -1) {
+      parts.protocol = string.substring(0, pos) || null;
+      if (parts.protocol &#x26;&#x26; !parts.protocol.match(URI.protocol_expression)) {
+        // : may be within the path
+        parts.protocol = undefined;
+      } else if (string.substring(pos + 1, pos + 3) === &#x27;//&#x27;) {
+        string = string.substring(pos + 3);
+
+        // extract &#x22;user:pass@host:port&#x22;
+        string = URI.parseAuthority(string, parts);
+      } else {
+        string = string.substring(pos + 1);
+        parts.urn = true;
+      }
+    }
+  }
+
+  // what&#x27;s left must be the path
+  parts.path = string;
+
+  // and we&#x27;re done
+  return parts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // expand template through given data map
+  p.expand = function(data, opts) {
+var result = &#x27;&#x27;;
+
+if (!this.parts || !this.parts.length) {
+  // lazilyy parse the template
+  this.<span class="apidocCodeKeywordSpan">parse</span>();
+}
+
+if (!(data instanceof Data)) {
+  // make given data available through the
+  // optimized data handling thingie
+  data = new Data(data);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.parseAuthority" id="apidoc.element.urijs.parseAuthority">
+        function <span class="apidocSignatureSpan">urijs.</span>parseAuthority
+        <span class="apidocSignatureSpan">(string, parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseAuthority = function (string, parts) {
+  string = URI.parseUserinfo(string, parts);
+  return URI.parseHost(string, parts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.parseHost" id="apidoc.element.urijs.parseHost">
+        function <span class="apidocSignatureSpan">urijs.</span>parseHost
+        <span class="apidocSignatureSpan">(string, parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseHost = function (string, parts) {
+  // Copy chrome, IE, opera backslash-handling behavior.
+  // Back slashes before the query string get converted to forward slashes
+  // See: https://github.com/joyent/node/blob/386fd24f49b0e9d1a8a076592a404168faeecc34/lib/url.js#L115-L124
+  // See: https://code.google.com/p/chromium/issues/detail?id=25916
+  // https://github.com/medialize/URI.js/pull/233
+  string = string.replace(/\\/g, &#x27;/&#x27;);
+
+  // extract host:port
+  var pos = string.indexOf(&#x27;/&#x27;);
+  var bracketPos;
+  var t;
+
+  if (pos === -1) {
+    pos = string.length;
+  }
+
+  if (string.charAt(0) === &#x27;[&#x27;) {
+    // IPv6 host - http://tools.ietf.org/html/draft-ietf-6man-text-addr-representation-04#section-6
+    // I claim most client software breaks on IPv6 anyways. To simplify things, URI only accepts
+    // IPv6+port in the format [2001:db8::1]:80 (for the time being)
+    bracketPos = string.indexOf(&#x27;]&#x27;);
+    parts.hostname = string.substring(1, bracketPos) || null;
+    parts.port = string.substring(bracketPos + 2, pos) || null;
+    if (parts.port === &#x27;/&#x27;) {
+      parts.port = null;
+    }
+  } else {
+    var firstColon = string.indexOf(&#x27;:&#x27;);
+    var firstSlash = string.indexOf(&#x27;/&#x27;);
+    var nextColon = string.indexOf(&#x27;:&#x27;, firstColon + 1);
+    if (nextColon !== -1 &#x26;&#x26; (firstSlash === -1 || nextColon &#x3c; firstSlash)) {
+      // IPv6 host contains multiple colons - but no port
+      // this notation is actually not allowed by RFC 3986, but we&#x27;re a liberal parser
+      parts.hostname = string.substring(0, pos) || null;
+      parts.port = null;
+    } else {
+      t = string.substring(0, pos).split(&#x27;:&#x27;);
+      parts.hostname = t[0] || null;
+      parts.port = t[1] || null;
+    }
+  }
+
+  if (parts.hostname &#x26;&#x26; string.substring(pos).charAt(0) !== &#x27;/&#x27;) {
+    pos++;
+    string = &#x27;/&#x27; + string;
+  }
+
+  return string.substring(pos) || &#x27;/&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.parseQuery" id="apidoc.element.urijs.parseQuery">
+        function <span class="apidocSignatureSpan">urijs.</span>parseQuery
+        <span class="apidocSignatureSpan">(string, escapeQuerySpace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseQuery = function (string, escapeQuerySpace) {
+  if (!string) {
+    return {};
+  }
+
+  // throw out the funky business - &#x22;?&#x22;[name&#x22;=&#x22;value&#x22;&#x26;&#x22;]+
+  string = string.replace(/&#x26;+/g, &#x27;&#x26;&#x27;).replace(/^\?*&#x26;*|&#x26;+$/g, &#x27;&#x27;);
+
+  if (!string) {
+    return {};
+  }
+
+  var items = {};
+  var splits = string.split(&#x27;&#x26;&#x27;);
+  var length = splits.length;
+  var v, name, value;
+
+  for (var i = 0; i &#x3c; length; i++) {
+    v = splits[i].split(&#x27;=&#x27;);
+    name = URI.decodeQuery(v.shift(), escapeQuerySpace);
+    // no &#x22;=&#x22; is null according to http://dvcs.w3.org/hg/url/raw-file/tip/Overview.html#collect-url-parameters
+    value = v.length ? URI.decodeQuery(v.join(&#x27;=&#x27;), escapeQuerySpace) : null;
+
+    if (hasOwn.call(items, name)) {
+      if (typeof items[name] === &#x27;string&#x27; || items[name] === null) {
+        items[name] = [items[name]];
+      }
+
+      items[name].push(value);
+    } else {
+      items[name] = value;
+    }
+  }
+
+  return items;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.parseUserinfo" id="apidoc.element.urijs.parseUserinfo">
+        function <span class="apidocSignatureSpan">urijs.</span>parseUserinfo
+        <span class="apidocSignatureSpan">(string, parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseUserinfo = function (string, parts) {
+  // extract username:password
+  var firstSlash = string.indexOf(&#x27;/&#x27;);
+  var pos = string.lastIndexOf(&#x27;@&#x27;, firstSlash &#x3e; -1 ? firstSlash : string.length - 1);
+  var t;
+
+  // authority@ must come before /path
+  if (pos &#x3e; -1 &#x26;&#x26; (firstSlash === -1 || pos &#x3c; firstSlash)) {
+    t = string.substring(0, pos).split(&#x27;:&#x27;);
+    parts.username = t[0] ? URI.decode(t[0]) : null;
+    t.shift();
+    parts.password = t[0] ? URI.decode(t.join(&#x27;:&#x27;)) : null;
+    string = string.substring(pos + 1);
+  } else {
+    parts.username = null;
+    parts.password = null;
+  }
+
+  return string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.recodePath" id="apidoc.element.urijs.recodePath">
+        function <span class="apidocSignatureSpan">urijs.</span>recodePath
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recodePath = function (string) {
+  // Why pass in names of functions, rather than the function objects themselves? The
+  // definitions of some functions (but in particular, URI.decode) will occasionally change due
+  // to URI.js having ISO8859 and Unicode modes. Passing in the name and getting it will ensure
+  // that the functions we use here are &#x22;fresh&#x22;.
+  var actualCodingFunc;
+  if (!_innerCodingFuncName) {
+    actualCodingFunc = URI[_codingFuncName];
+  } else {
+    actualCodingFunc = function(string) {
+      return URI[_codingFuncName](URI[_innerCodingFuncName](string));
+    };
+  }
+
+  var segments = (string + &#x27;&#x27;).split(_sep);
+
+  for (var i = 0, length = segments.length; i &#x3c; length; i++) {
+    segments[i] = actualCodingFunc(segments[i]);
+  }
+
+  return segments.join(_sep);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.recodeUrnPath" id="apidoc.element.urijs.recodeUrnPath">
+        function <span class="apidocSignatureSpan">urijs.</span>recodeUrnPath
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recodeUrnPath = function (string) {
+  // Why pass in names of functions, rather than the function objects themselves? The
+  // definitions of some functions (but in particular, URI.decode) will occasionally change due
+  // to URI.js having ISO8859 and Unicode modes. Passing in the name and getting it will ensure
+  // that the functions we use here are &#x22;fresh&#x22;.
+  var actualCodingFunc;
+  if (!_innerCodingFuncName) {
+    actualCodingFunc = URI[_codingFuncName];
+  } else {
+    actualCodingFunc = function(string) {
+      return URI[_codingFuncName](URI[_innerCodingFuncName](string));
+    };
+  }
+
+  var segments = (string + &#x27;&#x27;).split(_sep);
+
+  for (var i = 0, length = segments.length; i &#x3c; length; i++) {
+    segments[i] = actualCodingFunc(segments[i]);
+  }
+
+  return segments.join(_sep);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.removeQuery" id="apidoc.element.urijs.removeQuery">
+        function <span class="apidocSignatureSpan">urijs.</span>removeQuery
+        <span class="apidocSignatureSpan">(data, name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeQuery = function (data, name, value) {
+  var i, length, key;
+
+  if (isArray(name)) {
+    for (i = 0, length = name.length; i &#x3c; length; i++) {
+      data[name[i]] = undefined;
+    }
+  } else if (getType(name) === &#x27;RegExp&#x27;) {
+    for (key in data) {
+      if (name.test(key)) {
+        data[key] = undefined;
+      }
+    }
+  } else if (typeof name === &#x27;object&#x27;) {
+    for (key in name) {
+      if (hasOwn.call(name, key)) {
+        URI.removeQuery(data, key, name[key]);
+      }
+    }
+  } else if (typeof name === &#x27;string&#x27;) {
+    if (value !== undefined) {
+      if (getType(value) === &#x27;RegExp&#x27;) {
+        if (!isArray(data[name]) &#x26;&#x26; value.test(data[name])) {
+          data[name] = undefined;
+        } else {
+          data[name] = filterArrayValues(data[name], value);
+        }
+      } else if (data[name] === String(value) &#x26;&#x26; (!isArray(value) || value.length === 1)) {
+        data[name] = undefined;
+      } else if (isArray(data[name])) {
+        data[name] = filterArrayValues(data[name], value);
+      }
+    } else {
+      data[name] = undefined;
+    }
+  } else {
+    throw new TypeError(&#x27;URI.removeQuery() accepts an object, string, RegExp as the first parameter&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.unicode" id="apidoc.element.urijs.unicode">
+        function <span class="apidocSignatureSpan">urijs.</span>unicode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unicode = function () {
+  URI.encode = strictEncodeURIComponent;
+  URI.decode = decodeURIComponent;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.withinString" id="apidoc.element.urijs.withinString">
+        function <span class="apidocSignatureSpan">urijs.</span>withinString
+        <span class="apidocSignatureSpan">(string, callback, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">withinString = function (string, callback, options) {
+  options || (options = {});
+  var _start = options.start || URI.findUri.start;
+  var _end = options.end || URI.findUri.end;
+  var _trim = options.trim || URI.findUri.trim;
+  var _parens = options.parens || URI.findUri.parens;
+  var _attributeOpen = /[a-z0-9-]=[&#x22;&#x27;]?$/i;
+
+  _start.lastIndex = 0;
+  while (true) {
+    var match = _start.exec(string);
+    if (!match) {
+      break;
+    }
+
+    var start = match.index;
+    if (options.ignoreHtml) {
+      // attribut(e=[&#x22;&#x27;]?$)
+      var attributeOpen = string.slice(Math.max(start - 3, 0), start);
+      if (attributeOpen &#x26;&#x26; _attributeOpen.test(attributeOpen)) {
+        continue;
+      }
+    }
+
+    var end = start + string.slice(start).search(_end);
+    var slice = string.slice(start, end);
+    // make sure we include well balanced parens
+    var parensEnd = -1;
+    while (true) {
+      var parensMatch = _parens.exec(slice);
+      if (!parensMatch) {
+        break;
+      }
+
+      var parensMatchEnd = parensMatch.index + parensMatch[0].length;
+      parensEnd = Math.max(parensEnd, parensMatchEnd);
+    }
+
+    if (parensEnd &#x3e; -1) {
+      slice = slice.slice(0, parensEnd) + slice.slice(parensEnd).replace(_trim, &#x27;&#x27;);
+    } else {
+      slice = slice.replace(_trim, &#x27;&#x27;);
+    }
+
+    if (slice.length &#x3c;= match[0].length) {
+      // the extract only contains the starting marker of a URI,
+      // e.g. &#x22;www&#x22; or &#x22;http://&#x22;
+      continue;
+    }
+
+    if (options.ignore &#x26;&#x26; options.ignore.test(slice)) {
+      continue;
+    }
+
+    end = start + slice.length;
+    var result = callback(slice, start, end, string);
+    if (result === undefined) {
+      _start.lastIndex = end;
+      continue;
+    }
+
+    result = String(result);
+    string = string.slice(0, start) + result + string.slice(end);
+    _start.lastIndex = start + result.length;
+  }
+
+  _start.lastIndex = 0;
+  return string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urijs.IPv6" id="apidoc.module.urijs.IPv6">module urijs.IPv6</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.IPv6.best" id="apidoc.element.urijs.IPv6.best">
+        function <span class="apidocSignatureSpan">urijs.IPv6.</span>best
+        <span class="apidocSignatureSpan">(address)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function bestPresentation(address) {
+  // based on:
+  // Javascript to test an IPv6 address for proper format, and to
+  // present the &#x22;best text representation&#x22; according to IETF Draft RFC at
+  // http://tools.ietf.org/html/draft-ietf-6man-text-addr-representation-04
+  // 8 Feb 2010 Rich Brown, Dartware, LLC
+  // Please feel free to use this code as long as you provide a link to
+  // http://www.intermapper.com
+  // http://intermapper.com/support/tools/IPV6-Validator.aspx
+  // http://download.dartware.com/thirdparty/ipv6validator.js
+
+  var _address = address.toLowerCase();
+  var segments = _address.split(&#x27;:&#x27;);
+  var length = segments.length;
+  var total = 8;
+
+  // trim colons (:: or ::a:b:c… or …a:b:c::)
+  if (segments[0] === &#x27;&#x27; &#x26;&#x26; segments[1] === &#x27;&#x27; &#x26;&#x26; segments[2] === &#x27;&#x27;) {
+    // must have been ::
+    // remove first two items
+    segments.shift();
+    segments.shift();
+  } else if (segments[0] === &#x27;&#x27; &#x26;&#x26; segments[1] === &#x27;&#x27;) {
+    // must have been ::xxxx
+    // remove the first item
+    segments.shift();
+  } else if (segments[length - 1] === &#x27;&#x27; &#x26;&#x26; segments[length - 2] === &#x27;&#x27;) {
+    // must have been xxxx::
+    segments.pop();
+  }
+
+  length = segments.length;
+
+  // adjust total segments for IPv4 trailer
+  if (segments[length - 1].indexOf(&#x27;.&#x27;) !== -1) {
+    // found a &#x22;.&#x22; which means IPv4
+    total = 7;
+  }
+
+  // fill empty segments them with &#x22;0000&#x22;
+  var pos;
+  for (pos = 0; pos &#x3c; length; pos++) {
+    if (segments[pos] === &#x27;&#x27;) {
+      break;
+    }
+  }
+
+  if (pos &#x3c; total) {
+    segments.splice(pos, 1, &#x27;0000&#x27;);
+    while (segments.length &#x3c; total) {
+      segments.splice(pos, 0, &#x27;0000&#x27;);
+    }
+  }
+
+  // strip leading zeros
+  var _segments;
+  for (var i = 0; i &#x3c; total; i++) {
+    _segments = segments[i].split(&#x27;&#x27;);
+    for (var j = 0; j &#x3c; 3 ; j++) {
+      if (_segments[0] === &#x27;0&#x27; &#x26;&#x26; _segments.length &#x3e; 1) {
+        _segments.splice(0,1);
+      } else {
+        break;
+      }
+    }
+
+    segments[i] = _segments.join(&#x27;&#x27;);
+  }
+
+  // find longest sequence of zeroes and coalesce them into one segment
+  var best = -1;
+  var _best = 0;
+  var _current = 0;
+  var current = -1;
+  var inzeroes = false;
+  // i; already declared
+
+  for (i = 0; i &#x3c; total; i++) {
+    if (inzeroes) {
+      if (segments[i] === &#x27;0&#x27;) {
+        _current += 1;
+      } else {
+        inzeroes = false;
+        if (_current &#x3e; _best) {
+          best = current;
+          _best = _current;
+        }
+      }
+    } else {
+      if (segments[i] === &#x27;0&#x27;) {
+        inzeroes = true;
+        current = i;
+        _current = 1;
+      }
+    }
+  }
+
+  if (_current &#x3e; _best) {
+    best = current;
+    _best = _current;
+  }
+
+  if (_best &#x3e; 1) {
+    segments.splice(best, _best, &#x27;&#x27;);
+  }
+
+  length = segments.length;
+
+  // assemble remaining segments
+  var result = &#x27;&#x27;;
+  if (segments[0] === &#x27;&#x27;)  {
+    result = &#x27;:&#x27;;
+  }
+
+  for (i = 0; i &#x3c; length; i++) {
+    result += segments[i];
+    if (i === length - 1) {
+      break;
+    }
+
+    result += &#x27;:&#x27;;
+  }
+
+  if (segments[length - 1] === &#x27;&#x27;) {
+    result += &#x27;:&#x27;;
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  root.IPv6 = factory(root);
+}
+}(this, function (root) {
+&#x27;use strict&#x27;;
+
+/*
+var _in = &#x22;fe80:0000:0000:0000:0204:61ff:fe9d:f156&#x22;;
+var _out = IPv6.<span class="apidocCodeKeywordSpan">best</span>(_in);
+var _expected = &#x22;fe80::204:61ff:fe9d:f156&#x22;;
+
+console.log(_in, _out, _expected, _out === _expected);
+*/
+
+// save current IPv6 variable, if any
+var _IPv6 = root &#x26;&#x26; root.IPv6;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.IPv6.noConflict" id="apidoc.element.urijs.IPv6.noConflict">
+        function <span class="apidocSignatureSpan">urijs.IPv6.</span>noConflict
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noConflict() {
+<span class="apidocCodeCommentSpan">  /*jshint validthis: true */
+</span>  if (root.IPv6 === this) {
+    root.IPv6 = _IPv6;
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urijs.SecondLevelDomains" id="apidoc.module.urijs.SecondLevelDomains">module urijs.SecondLevelDomains</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.SecondLevelDomains.get" id="apidoc.element.urijs.SecondLevelDomains.get">
+        function <span class="apidocSignatureSpan">urijs.SecondLevelDomains.</span>get
+        <span class="apidocSignatureSpan">(domain)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (domain) {
+  var tldOffset = domain.lastIndexOf(&#x27;.&#x27;);
+  if (tldOffset &#x3c;= 0 || tldOffset &#x3e;= (domain.length-1)) {
+    return null;
+  }
+  var sldOffset = domain.lastIndexOf(&#x27;.&#x27;, tldOffset-1);
+  if (sldOffset &#x3c;= 0 || sldOffset &#x3e;= (tldOffset-1)) {
+    return null;
+  }
+  var sldList = SLD.list[domain.slice(tldOffset+1)];
+  if (!sldList) {
+    return null;
+  }
+  if (sldList.indexOf(&#x27; &#x27; + domain.slice(sldOffset+1, tldOffset) + &#x27; &#x27;) &#x3c; 0) {
+    return null;
+  }
+  return domain.slice(sldOffset+1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var variables = expression.variables;
+// result buffer for evaluating the expression
+var buffer = [];
+var d, variable, i;
+
+for (i = 0; (variable = variables[i]); i++) {
+  // fetch simplified data source
+  d = data.<span class="apidocCodeKeywordSpan">get</span>(variable.name);
+  if (d.type === 0 &#x26;&#x26; opts &#x26;&#x26; opts.strict) {
+      throw new Error(&#x27;Missing expansion value for variable &#x22;&#x27; + variable.name + &#x27;&#x22;&#x27;);
+  }
+  if (!d.val.length) {
+    if (d.type) {
+      // empty variables (empty string)
+      // still lead to a separator being appended!
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.SecondLevelDomains.has" id="apidoc.element.urijs.SecondLevelDomains.has">
+        function <span class="apidocSignatureSpan">urijs.SecondLevelDomains.</span>has
+        <span class="apidocSignatureSpan">(domain)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (domain) {
+  var tldOffset = domain.lastIndexOf(&#x27;.&#x27;);
+  if (tldOffset &#x3c;= 0 || tldOffset &#x3e;= (domain.length-1)) {
+    return false;
+  }
+  var sldOffset = domain.lastIndexOf(&#x27;.&#x27;, tldOffset-1);
+  if (sldOffset &#x3c;= 0 || sldOffset &#x3e;= (tldOffset-1)) {
+    return false;
+  }
+  var sldList = SLD.list[domain.slice(tldOffset+1)];
+  if (!sldList) {
+    return false;
+  }
+  return sldList.indexOf(&#x27; &#x27; + domain.slice(sldOffset+1, tldOffset) + &#x27; &#x27;) &#x3e;= 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.SecondLevelDomains.is" id="apidoc.element.urijs.SecondLevelDomains.is">
+        function <span class="apidocSignatureSpan">urijs.SecondLevelDomains.</span>is
+        <span class="apidocSignatureSpan">(domain)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">is = function (domain) {
+  var tldOffset = domain.lastIndexOf(&#x27;.&#x27;);
+  if (tldOffset &#x3c;= 0 || tldOffset &#x3e;= (domain.length-1)) {
+    return false;
+  }
+  var sldOffset = domain.lastIndexOf(&#x27;.&#x27;, tldOffset-1);
+  if (sldOffset &#x3e;= 0) {
+    return false;
+  }
+  var sldList = SLD.list[domain.slice(tldOffset+1)];
+  if (!sldList) {
+    return false;
+  }
+  return sldList.indexOf(&#x27; &#x27; + domain.slice(0, tldOffset) + &#x27; &#x27;) &#x3e;= 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+require.config({
+  paths: {
+    urijs: &#x27;where-you-put-uri.js/src&#x27;
+  }
+});
+
+require([&#x27;urijs/URI&#x27;], function(URI) {
+  console.log(&#x22;URI.js and dependencies: &#x22;, URI(&#x22;//amazon.co.uk&#x22;).<span class="apidocCodeKeywordSpan">is</span
+>(&#x27;sld&#x27;) ? &#x27;loaded&#x27; : &#x27;failed&#x27;);
+});
+require([&#x27;urijs/URITemplate&#x27;], function(URITemplate) {
+  console.log(&#x22;URITemplate.js and dependencies: &#x22;, URITemplate._cache ? &#x27;loaded&#x27; : &#x27;failed&#x27;);
+});
+```
+
+## Minify ##
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.SecondLevelDomains.noConflict" id="apidoc.element.urijs.SecondLevelDomains.noConflict">
+        function <span class="apidocSignatureSpan">urijs.SecondLevelDomains.</span>noConflict
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noConflict = function (){
+  if (root.SecondLevelDomains === this) {
+    root.SecondLevelDomains = _SecondLevelDomains;
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urijs.URITemplate" id="apidoc.module.urijs.URITemplate">module urijs.URITemplate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.URITemplate.URITemplate" id="apidoc.element.urijs.URITemplate.URITemplate">
+        function <span class="apidocSignatureSpan">urijs.</span>URITemplate
+        <span class="apidocSignatureSpan">(expression)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function URITemplate(expression) {
+  // serve from cache where possible
+  if (URITemplate._cache[expression]) {
+    return URITemplate._cache[expression];
+  }
+
+  // Allow instantiation without the &#x27;new&#x27; keyword
+  if (!(this instanceof URITemplate)) {
+    return new URITemplate(expression);
+  }
+
+  this.expression = expression;
+  URITemplate._cache[expression] = this;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.URITemplate.expand" id="apidoc.element.urijs.URITemplate.expand">
+        function <span class="apidocSignatureSpan">urijs.URITemplate.</span>expand
+        <span class="apidocSignatureSpan">(expression, data, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">expand = function (expression, data, opts) {
+  // container for defined options for the given operator
+  var options = operators[expression.operator];
+  // expansion type (include keys or not)
+  var type = options.named ? &#x27;Named&#x27; : &#x27;Unnamed&#x27;;
+  // list of variables within the expression
+  var variables = expression.variables;
+  // result buffer for evaluating the expression
+  var buffer = [];
+  var d, variable, i;
+
+  for (i = 0; (variable = variables[i]); i++) {
+    // fetch simplified data source
+    d = data.get(variable.name);
+    if (d.type === 0 &#x26;&#x26; opts &#x26;&#x26; opts.strict) {
+        throw new Error(&#x27;Missing expansion value for variable &#x22;&#x27; + variable.name + &#x27;&#x22;&#x27;);
+    }
+    if (!d.val.length) {
+      if (d.type) {
+        // empty variables (empty string)
+        // still lead to a separator being appended!
+        buffer.push(&#x27;&#x27;);
+      }
+      // no data, no action
+      continue;
+    }
+
+    if (d.type &#x3e; 1 &#x26;&#x26; variable.maxlength) {
+      // composite variable cannot specify maxlength
+      throw new Error(&#x27;Invalid expression: Prefix modifier not applicable to variable &#x22;&#x27; + variable.name + &#x27;&#x22;&#x27;);
+    }
+
+    // expand the given variable
+    buffer.push(URITemplate[&#x27;expand&#x27; + type](
+      d,
+      options,
+      variable.explode,
+      variable.explode &#x26;&#x26; options.separator || &#x27;,&#x27;,
+      variable.maxlength,
+      variable.name
+    ));
+  }
+
+  if (buffer.length) {
+    return options.prefix + buffer.join(options.separator);
+  } else {
+    // prefix is not prepended for empty expressions
+    return &#x27;&#x27;;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+URI(&#x22;/foo/bar/baz.html&#x22;)
+  .relativeTo(&#x22;/foo/bar/sub/world.html&#x22;)
+    // -&#x3e; ../baz.html
+  .absoluteTo(&#x22;/foo/bar/sub/world.html&#x22;);
+    // -&#x3e; /foo/bar/baz.html
+
+// URI Templates
+URI.<span class="apidocCodeKeywordSpan">expand</span>(&#x22;/foo/{dir}/{file}&#x22;, {
+  dir: &#x22;bar&#x22;,
+  file: &#x22;world.html&#x22;
+});
+// -&#x3e; /foo/bar/world.html
+```
+
+See the [About Page](http://medialize.github.io/URI.js/) and [API Docs](http://medialize.github.io/URI.js/docs.html) for more stuff
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.URITemplate.expandNamed" id="apidoc.element.urijs.URITemplate.expandNamed">
+        function <span class="apidocSignatureSpan">urijs.URITemplate.</span>expandNamed
+        <span class="apidocSignatureSpan">(d, options, explode, separator, length, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">expandNamed = function (d, options, explode, separator, length, name) {
+  // variable result buffer
+  var result = &#x27;&#x27;;
+  // peformance crap
+  var encode = options.encode;
+  var empty_name_separator = options.empty_name_separator;
+  // flag noting if values are already encoded
+  var _encode = !d[encode].length;
+  // key for named expansion
+  var _name = d.type === 2 ? &#x27;&#x27;: URI[encode](name);
+  var _value, i, l;
+
+  // for each found value
+  for (i = 0, l = d.val.length; i &#x3c; l; i++) {
+    if (length) {
+      // maxlength must be determined before encoding can happen
+      _value = URI[encode](d.val[i][1].substring(0, length));
+      if (d.type === 2) {
+        // apply maxlength to keys of objects as well
+        _name = URI[encode](d.val[i][0].substring(0, length));
+      }
+    } else if (_encode) {
+      // encode value
+      _value = URI[encode](d.val[i][1]);
+      if (d.type === 2) {
+        // encode name and cache encoded value
+        _name = URI[encode](d.val[i][0]);
+        d[encode].push([_name, _value]);
+      } else {
+        // cache encoded value
+        d[encode].push([undefined, _value]);
+      }
+    } else {
+      // values are already encoded and can be pulled from cache
+      _value = d[encode][i][1];
+      if (d.type === 2) {
+        _name = d[encode][i][0];
+      }
+    }
+
+    if (result) {
+      // unless we&#x27;re the first value, prepend the separator
+      result += separator;
+    }
+
+    if (!explode) {
+      if (!i) {
+        // first element, so prepend variable name
+        result += URI[encode](name) + (empty_name_separator || _value ? &#x27;=&#x27; : &#x27;&#x27;);
+      }
+
+      if (d.type === 2) {
+        // without explode-modifier, keys of objects are returned comma-separated
+        result += _name + &#x27;,&#x27;;
+      }
+
+      result += _value;
+    } else {
+      // only add the = if it is either default (?&#x26;) or there actually is a value (;)
+      result += _name + (empty_name_separator || _value ? &#x27;=&#x27; : &#x27;&#x27;) + _value;
+    }
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.URITemplate.expandUnnamed" id="apidoc.element.urijs.URITemplate.expandUnnamed">
+        function <span class="apidocSignatureSpan">urijs.URITemplate.</span>expandUnnamed
+        <span class="apidocSignatureSpan">(d, options, explode, separator, length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">expandUnnamed = function (d, options, explode, separator, length) {
+  // variable result buffer
+  var result = &#x27;&#x27;;
+  // performance crap
+  var encode = options.encode;
+  var empty_name_separator = options.empty_name_separator;
+  // flag noting if values are already encoded
+  var _encode = !d[encode].length;
+  var _name, _value, i, l;
+
+  // for each found value
+  for (i = 0, l = d.val.length; i &#x3c; l; i++) {
+    if (length) {
+      // maxlength must be determined before encoding can happen
+      _value = URI[encode](d.val[i][1].substring(0, length));
+    } else if (_encode) {
+      // encode and cache value
+      _value = URI[encode](d.val[i][1]);
+      d[encode].push([
+        d.type === 2 ? URI[encode](d.val[i][0]) : undefined,
+        _value
+      ]);
+    } else {
+      // value already encoded, pull from cache
+      _value = d[encode][i][1];
+    }
+
+    if (result) {
+      // unless we&#x27;re the first value, prepend the separator
+      result += separator;
+    }
+
+    if (d.type === 2) {
+      if (length) {
+        // maxlength also applies to keys of objects
+        _name = URI[encode](d.val[i][0].substring(0, length));
+      } else {
+        // at this point the name must already be encoded
+        _name = d[encode][i][0];
+      }
+
+      result += _name;
+      if (explode) {
+        // explode-modifier separates name and value by &#x22;=&#x22;
+        result += (empty_name_separator || _value ? &#x27;=&#x27; : &#x27;&#x27;);
+      } else {
+        // no explode-modifier separates name and value by &#x22;,&#x22;
+        result += &#x27;,&#x27;;
+      }
+    }
+
+    result += _value;
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.URITemplate.noConflict" id="apidoc.element.urijs.URITemplate.noConflict">
+        function <span class="apidocSignatureSpan">urijs.URITemplate.</span>noConflict
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noConflict = function () {
+  if (root.URITemplate === URITemplate) {
+    root.URITemplate = _URITemplate;
+  }
+
+  return URITemplate;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urijs.URITemplate.prototype" id="apidoc.module.urijs.URITemplate.prototype">module urijs.URITemplate.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.URITemplate.prototype.expand" id="apidoc.element.urijs.URITemplate.prototype.expand">
+        function <span class="apidocSignatureSpan">urijs.URITemplate.prototype.</span>expand
+        <span class="apidocSignatureSpan">(data, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">expand = function (data, opts) {
+  var result = &#x27;&#x27;;
+
+  if (!this.parts || !this.parts.length) {
+    // lazilyy parse the template
+    this.parse();
+  }
+
+  if (!(data instanceof Data)) {
+    // make given data available through the
+    // optimized data handling thingie
+    data = new Data(data);
+  }
+
+  for (var i = 0, l = this.parts.length; i &#x3c; l; i++) {
+<span class="apidocCodeCommentSpan">    /*jshint laxbreak: true */
+</span>    result += typeof this.parts[i] === &#x27;string&#x27;
+      // literal string
+      ? this.parts[i]
+      // expression
+      : URITemplate.expand(this.parts[i], data, opts);
+    /*jshint laxbreak: false */
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+URI(&#x22;/foo/bar/baz.html&#x22;)
+  .relativeTo(&#x22;/foo/bar/sub/world.html&#x22;)
+    // -&#x3e; ../baz.html
+  .absoluteTo(&#x22;/foo/bar/sub/world.html&#x22;);
+    // -&#x3e; /foo/bar/baz.html
+
+// URI Templates
+URI.<span class="apidocCodeKeywordSpan">expand</span>(&#x22;/foo/{dir}/{file}&#x22;, {
+  dir: &#x22;bar&#x22;,
+  file: &#x22;world.html&#x22;
+});
+// -&#x3e; /foo/bar/world.html
+```
+
+See the [About Page](http://medialize.github.io/URI.js/) and [API Docs](http://medialize.github.io/URI.js/docs.html) for more stuff
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.URITemplate.prototype.parse" id="apidoc.element.urijs.URITemplate.prototype.parse">
+        function <span class="apidocSignatureSpan">urijs.URITemplate.prototype.</span>parse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function () {
+  // performance crap
+  var expression = this.expression;
+  var ePattern = URITemplate.EXPRESSION_PATTERN;
+  var vPattern = URITemplate.VARIABLE_PATTERN;
+  var nPattern = URITemplate.VARIABLE_NAME_PATTERN;
+  var lPattern = URITemplate.LITERAL_PATTERN;
+  // token result buffer
+  var parts = [];
+    // position within source template
+  var pos = 0;
+  var variables, eMatch, vMatch;
+
+  var checkLiteral = function(literal) {
+    if (literal.match(lPattern)) {
+      throw new Error(&#x27;Invalid Literal &#x22;&#x27; + literal + &#x27;&#x22;&#x27;);
+    }
+    return literal;
+  };
+
+  // RegExp is shared accross all templates,
+  // which requires a manual reset
+  ePattern.lastIndex = 0;
+  // I don&#x27;t like while(foo = bar()) loops,
+  // to make things simpler I go while(true) and break when required
+  while (true) {
+    eMatch = ePattern.exec(expression);
+    if (eMatch === null) {
+      // push trailing literal
+      parts.push(checkLiteral(expression.substring(pos)));
+      break;
+    } else {
+      // push leading literal
+      parts.push(checkLiteral(expression.substring(pos, eMatch.index)));
+      pos = eMatch.index + eMatch[0].length;
+    }
+
+    if (!operators[eMatch[1]]) {
+      throw new Error(&#x27;Unknown Operator &#x22;&#x27; + eMatch[1]  + &#x27;&#x22; in &#x22;&#x27; + eMatch[0] + &#x27;&#x22;&#x27;);
+    } else if (!eMatch[3]) {
+      throw new Error(&#x27;Unclosed Expression &#x22;&#x27; + eMatch[0]  + &#x27;&#x22;&#x27;);
+    }
+
+    // parse variable-list
+    variables = eMatch[2].split(&#x27;,&#x27;);
+    for (var i = 0, l = variables.length; i &#x3c; l; i++) {
+      vMatch = variables[i].match(vPattern);
+      if (vMatch === null) {
+        throw new Error(&#x27;Invalid Variable &#x22;&#x27; + variables[i] + &#x27;&#x22; in &#x22;&#x27; + eMatch[0] + &#x27;&#x22;&#x27;);
+      } else if (vMatch[1].match(nPattern)) {
+        throw new Error(&#x27;Invalid Variable Name &#x22;&#x27; + vMatch[1] + &#x27;&#x22; in &#x22;&#x27; + eMatch[0] + &#x27;&#x22;&#x27;);
+      }
+
+      variables[i] = {
+        name: vMatch[1],
+        explode: !!vMatch[3],
+        maxlength: vMatch[4] &#x26;&#x26; parseInt(vMatch[4], 10)
+      };
+    }
+
+    if (!variables.length) {
+      throw new Error(&#x27;Expression Missing Variable(s) &#x22;&#x27; + eMatch[0] + &#x27;&#x22;&#x27;);
+    }
+
+    parts.push({
+      expression: eMatch[0],
+      operator: eMatch[1],
+      variables: variables
+    });
+  }
+
+  if (!parts.length) {
+    // template doesn&#x27;t contain any expressions
+    // so it is a simple literal string
+    // this probably should fire a warning or something?
+    parts.push(checkLiteral(expression));
+  }
+
+  this.parts = parts;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // expand template through given data map
+  p.expand = function(data, opts) {
+var result = &#x27;&#x27;;
+
+if (!this.parts || !this.parts.length) {
+  // lazilyy parse the template
+  this.<span class="apidocCodeKeywordSpan">parse</span>();
+}
+
+if (!(data instanceof Data)) {
+  // make given data available through the
+  // optimized data handling thingie
+  data = new Data(data);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urijs.punycode" id="apidoc.module.urijs.punycode">module urijs.punycode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.punycode.decode" id="apidoc.element.urijs.punycode.decode">
+        function <span class="apidocSignatureSpan">urijs.punycode.</span>decode
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decode(input) {
+		// Don&#x27;t use UCS-2
+		var output = [],
+		    inputLength = input.length,
+		    out,
+		    i = 0,
+		    n = initialN,
+		    bias = initialBias,
+		    basic,
+		    j,
+		    index,
+		    oldi,
+		    w,
+		    k,
+		    digit,
+		    t,
+		<span class="apidocCodeCommentSpan">    /** Cached calculation results */
+</span>		    baseMinusT;
+
+		// Handle the basic code points: let `basic` be the number of input code
+		// points before the last delimiter, or `0` if there is none, then copy
+		// the first basic code points to the output.
+
+		basic = input.lastIndexOf(delimiter);
+		if (basic &#x3c; 0) {
+			basic = 0;
+		}
+
+		for (j = 0; j &#x3c; basic; ++j) {
+			// if it&#x27;s not a basic code point
+			if (input.charCodeAt(j) &#x3e;= 0x80) {
+				error(&#x27;not-basic&#x27;);
+			}
+			output.push(input.charCodeAt(j));
+		}
+
+		// Main decoding loop: start just after the last delimiter if any basic code
+		// points were copied; start at the beginning otherwise.
+
+		for (index = basic &#x3e; 0 ? basic + 1 : 0; index &#x3c; inputLength; /* no final expression */) {
+
+			// `index` is the index of the next character to be consumed.
+			// Decode a generalized variable-length integer into `delta`,
+			// which gets added to `i`. The overflow checking is easier
+			// if we increase `i` as we go, then subtract off its starting
+			// value at the end to obtain `delta`.
+			for (oldi = i, w = 1, k = base; /* no condition */; k += base) {
+
+				if (index &#x3e;= inputLength) {
+					error(&#x27;invalid-input&#x27;);
+				}
+
+				digit = basicToDigit(input.charCodeAt(index++));
+
+				if (digit &#x3e;= base || digit &#x3e; floor((maxInt - i) / w)) {
+					error(&#x27;overflow&#x27;);
+				}
+
+				i += digit * w;
+				t = k &#x3c;= bias ? tMin : (k &#x3e;= bias + tMax ? tMax : k - bias);
+
+				if (digit &#x3c; t) {
+					break;
+				}
+
+				baseMinusT = base - t;
+				if (w &#x3e; floor(maxInt / baseMinusT)) {
+					error(&#x27;overflow&#x27;);
+				}
+
+				w *= baseMinusT;
+
+			}
+
+			out = output.length + 1;
+			bias = adapt(i - oldi, out, oldi == 0);
+
+			// `i` was supposed to wrap around from `out` to `0`,
+			// incrementing `n` each time, so we&#x27;ll fix that now:
+			if (floor(i / out) &#x3e; maxInt - n) {
+				error(&#x27;overflow&#x27;);
+			}
+
+			n += floor(i / out);
+			i %= out;
+
+			// Insert `n` at position `i` of the output
+			output.splice(i++, 0, n);
+
+		}
+
+		return ucs2encode(output);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.punycode.encode" id="apidoc.element.urijs.punycode.encode">
+        function <span class="apidocSignatureSpan">urijs.punycode.</span>encode
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encode(input) {
+		var n,
+		    delta,
+		    handledCPCount,
+		    basicLength,
+		    bias,
+		    j,
+		    m,
+		    q,
+		    k,
+		    t,
+		    currentValue,
+		    output = [],
+		<span class="apidocCodeCommentSpan">    /** `inputLength` will hold the number of code points in `input`. */
+</span>		    inputLength,
+		    /** Cached calculation results */
+		    handledCPCountPlusOne,
+		    baseMinusT,
+		    qMinusT;
+
+		// Convert the input in UCS-2 to Unicode
+		input = ucs2decode(input);
+
+		// Cache the length
+		inputLength = input.length;
+
+		// Initialize the state
+		n = initialN;
+		delta = 0;
+		bias = initialBias;
+
+		// Handle the basic code points
+		for (j = 0; j &#x3c; inputLength; ++j) {
+			currentValue = input[j];
+			if (currentValue &#x3c; 0x80) {
+				output.push(stringFromCharCode(currentValue));
+			}
+		}
+
+		handledCPCount = basicLength = output.length;
+
+		// `handledCPCount` is the number of code points that have been handled;
+		// `basicLength` is the number of basic code points.
+
+		// Finish the basic string - if it is not empty - with a delimiter
+		if (basicLength) {
+			output.push(delimiter);
+		}
+
+		// Main encoding loop:
+		while (handledCPCount &#x3c; inputLength) {
+
+			// All non-basic code points &#x3c; n have been handled already. Find the next
+			// larger one:
+			for (m = maxInt, j = 0; j &#x3c; inputLength; ++j) {
+				currentValue = input[j];
+				if (currentValue &#x3e;= n &#x26;&#x26; currentValue &#x3c; m) {
+					m = currentValue;
+				}
+			}
+
+			// Increase `delta` enough to advance the decoder&#x27;s &#x3c;n,i&#x3e; state to &#x3c;m,0&#x3e;,
+			// but guard against overflow
+			handledCPCountPlusOne = handledCPCount + 1;
+			if (m - n &#x3e; floor((maxInt - delta) / handledCPCountPlusOne)) {
+				error(&#x27;overflow&#x27;);
+			}
+
+			delta += (m - n) * handledCPCountPlusOne;
+			n = m;
+
+			for (j = 0; j &#x3c; inputLength; ++j) {
+				currentValue = input[j];
+
+				if (currentValue &#x3c; n &#x26;&#x26; ++delta &#x3e; maxInt) {
+					error(&#x27;overflow&#x27;);
+				}
+
+				if (currentValue == n) {
+					// Represent delta as a generalized variable-length integer
+					for (q = delta, k = base; /* no condition */; k += base) {
+						t = k &#x3c;= bias ? tMin : (k &#x3e;= bias + tMax ? tMax : k - bias);
+						if (q &#x3c; t) {
+							break;
+						}
+						qMinusT = q - t;
+						baseMinusT = base - t;
+						output.push(
+							stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0))
+						);
+						q = floor(qMinusT / baseMinusT);
+					}
+
+					output.push(stringFromCharCode(digitToBasic(q, 0)));
+					bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
+					delta = 0;
+					++handledCPCount;
+				}
+			}
+
+			++delta;
+			++n;
+
+		}
+		return output.join(&#x27;&#x27;);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.punycode.toASCII" id="apidoc.element.urijs.punycode.toASCII">
+        function <span class="apidocSignatureSpan">urijs.punycode.</span>toASCII
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toASCII(input) {
+		return mapDomain(input, function(string) {
+			return regexNonASCII.test(string)
+				? &#x27;xn--&#x27; + encode(string)
+				: string;
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urijs.punycode.toUnicode" id="apidoc.element.urijs.punycode.toUnicode">
+        function <span class="apidocSignatureSpan">urijs.punycode.</span>toUnicode
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toUnicode(input) {
+		return mapDomain(input, function(string) {
+			return regexPunycode.test(string)
+				? decode(string.slice(4).toLowerCase())
+				: string;
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
